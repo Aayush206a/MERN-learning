@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.routes.js'
 import {connectDb} from './config/db.config.js'
 import {errorHandler} from './middlewares/errorHandler.middleware.js'
 import taskRoutes from './routes/task.routes.js'
+import cors from 'cors'
 import http from "http";
 import { error } from "console";
 
@@ -13,6 +14,10 @@ connectDb()
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+  origin: '*'
+}))
 //! middleware being utilized in this thing man
 // const middleware =(req, res, next) => {
 //   console.log('middleware');

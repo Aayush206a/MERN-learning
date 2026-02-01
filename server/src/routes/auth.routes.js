@@ -11,6 +11,6 @@ const middelware = (req, res, next) => {
 router.post('/register', register);
 
 //? login
-router.post('/login',middelware,middelware,middelware,login)
+router.post('/login',login)
 
 export default router
